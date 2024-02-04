@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Styles.titleMedium,
+            style: Styles.textStyle18,
           ),
           BestSellerListViewItem(),
         ],
@@ -51,7 +51,9 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           const Column(
-            children: [],
+            children: [
+
+            ],
           )
         ],
       ),
