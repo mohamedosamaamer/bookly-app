@@ -40,8 +40,8 @@ class BookListViewItem extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
                       'Harry Potter and the Goblet of fire',
-                      style:
-                          Styles.textStyle20.copyWith(fontFamily: 'kGtSectraFine'),
+                      style: Styles.textStyle20
+                          .copyWith(fontFamily: 'kGtSectraFine'),
                       maxLines: 2,
                     ),
                   ),
@@ -75,4 +75,3 @@ class BookListViewItem extends StatelessWidget {
     );
   }
 }
-
