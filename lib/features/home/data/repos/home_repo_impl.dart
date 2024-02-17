@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
-  HomeRepoImpl({required this.apiService});
+  HomeRepoImpl(this.apiService);
 
   final ApiService apiService;
 
