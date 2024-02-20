@@ -6,9 +6,8 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
-  HomeRepoImpl(this.apiService);
-
   final ApiService apiService;
+  HomeRepoImpl(this.apiService);
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
@@ -33,20 +32,20 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
-     try {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
       var data = await apiService.get(
-          endPoint:
-              'volumes?Filtering=free-ebooks&q=subject:programming');
+          endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
 
       List<BookModel> books = [];
 
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
       }
+      // print(books.length);
 
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
